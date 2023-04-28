@@ -130,9 +130,9 @@
    
     if (user) {
         if (user.random_string == verificationString) {
-        res.send({ msg: "verification string valid" });
+        res.send({ code: "verified" ,msg:"verification string done"});
         } else {
-        res.status(403).send({ msg: "verification string not valid" });
+        res.status(403).send({ code: "verification string not valid" });
         }
     } else {
         res.status(403).json({ message: "user doesn't exist" });
