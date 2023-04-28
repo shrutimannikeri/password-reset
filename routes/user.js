@@ -14,12 +14,14 @@
     const route = express.Router();
 
     // Nodemailer email authentication
+
     const transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-        user: process.env.EMAIL,
-        pass: process.env.PASSWORD,
-    },
+        host: 'smtp.ethereal.email',
+        port: 587,
+        auth: {
+            user: 'enoch.lockman@ethereal.email',
+            pass: 'kPHfawaQ35g8yYGZYm'
+        }
     });
 
     // Details of data to be sent in verification email
