@@ -110,7 +110,7 @@
         };
         let updaterInfo = await updateUserRandomstring(data);
 
-        let pwResetUrl = `${process.env.PWRESETURL}?id=${user._id}&rps=${hashvalue}`;
+        let pwResetUrl = `${process.env.PWRESETURL}/${user._id}?rps=${hashvalue}`;
         mailData.to = req.body.email;
         mailData.html = mailMessage(pwResetUrl);
         await transporter.sendMail(mailData);
